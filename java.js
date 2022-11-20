@@ -165,62 +165,150 @@
 //     return Math.floor(Math.random() * numbers.length) ;
 // } ;
 
-const hex = [0,1,2,3,4,5,6,7,8,9,"A", "B", "C", "D", "E", "F",] ;
-const btn = document.getElementById("gd") ;
-const color = document.querySelector(".gg") ;
+// const hex = [0,1,2,3,4,5,6,7,8,9,"A", "B", "C", "D", "E", "F",] ;
+// const btn = document.getElementById("gd") ;
+// const color = document.querySelector(".gg") ;
 
 
-btn.addEventListener('click', function() {
-    let hexColor = "#" ;
-    for(let i = 0 ; i < 6; i++){
-        hexColor += hex[getRandomNumber()];
-    }
-    color.textContent = hexColor ;
-    document.body.style.backgroundColor = hexColor ;
-})
-
-
-
-
-function getRandomNumber() {
-return Math.floor(Math.random() * hex.length);
-
-} ;
+// btn.addEventListener('click', function() {
+//     let hexColor = "#" ;
+//     for(let i = 0 ; i < 6; i++){
+//         hexColor += hex[getRandomNumber()];
+//     }
+//     color.textContent = hexColor ;
+//     document.body.style.backgroundColor = hexColor ;
+// })
 
 
 
-const btn2 = document.getElementById("gd2");
-let Animal = "reptile";
 
-btn2.addEventListener('click', function(){
-    switch(Animal){
-        case "rhino" :
-            console.log("that is a rhino");
-            break;
-        case "giraffe":
-            console.log("that is a giraffe");
-            break;
-        case "reptile":
-            console.log("that is a reptile");
-            break;
-        case "lizard" :
-            console.log("that is a lizard");
-            break;
-        default:
-            document.body.style.backgroundColor =  'rgb(155 , 70, 145)';
-            console.log("that is not represented animal")
+// function getRandomNumber() {
+// return Math.floor(Math.random() * hex.length);
+
+// } ;
+
+
+
+// const btn2 = document.getElementById("gd2");
+// let Animal = "snake";
+
+// btn2.addEventListener('click', function(){
+//     switch(Animal){
+//         case "rhino" :
+//             console.log("that is a rhino");
+//             break;
+//         case "giraffe":
+//             console.log("that is a giraffe");
+//             break;
+//         case "reptile":
+//             console.log("that is a reptile");
+//             break;
+//         case "lizard" :
+//             console.log("that is a lizard");
+//             break;
+//         default:
+//             document.body.style.backgroundColor =  'rgb(155 , 70, 145)';
+//             console.log("that is not represented animal")
            
-         }
+//          }
            
-}) ;
-
-
-      
-
-
-
-
+// }) ;
 
 // combine a switch statement with a function 
 
+
+// let count = 0;
+
+// const value = document.querySelector('#value');
+// const btns = document.querySelectorAll('.btn');
+
+// btns.forEach(function (btn) {
+//  btn.addEventListener('click', function (e){
+//     const styles = e.currentTarget.classList;
+    
+//     if(styles.contains('decrease')){
+//         count--;
+//     }
+//     else if (styles.contains("increase")){
+//         count++;
+//     }
+//     else {
+//         count = 0 ;
+//     }
+//     if(count > 0){
+//         value.style.color = "green"
+//     }
+//     if(count < 0){
+//         value.style.color = "red"
+//     }
+//     if(count === 0){
+//         value.style.color = "yellow"
+//     }
+//     value.textContent = count;
+//     });
+// });
+
+
+
+// let count = 0;
+
+// let value = document.querySelector("#value");                        
+// let btns = document.querySelectorAll(".btn");
+
+
+// btns.forEach(function(btn) {
+//     btn.addEventListener('click', function(e){
+//       let styles = e.currentTarget.classList;
+      
+//       if(styles.contains('decrease')){
+//         count--;
+//       }
+     
+//       else if (styles.contains('increase')){
+//       count++ ;   
+//       }
+
+//       else{
+//         count = 0;
+//       }
+    
+//       if(count < 0) {
+//         value.style.color = "red";
+//       }
+     
+//       if(count > 0) {
+//         value.style.color = "green";
+//       }
+     
+//       if(count === 0){
+//         value.style.color = "yellow";
+//      }
+
+//     value.textContent = count;
+//     }
+// )}
+//     );
+
+
+    const hex = [1,2,3,4,5,6,7,8,9,"A", "B", "C", "D", "E", "F", ];
+    const btn = document.getElementById("btn");
+    const color = document.querySelector(".color");
+
+
+btn.addEventListener('click', function (){
+    let hexColor = "#";
+    for(i = 0; i < 6; i++){
+    hexColor += hex[getRandomNumber()];
+    } ;
+   
+
+ color.textContent = hexColor ;
+ document.body.style.backgroundColor = hexColor;
+} );
+ 
+
+
+function getRandomNumber() {
+    return Math.floor(Math.random()* hex.length)
+ }
 
