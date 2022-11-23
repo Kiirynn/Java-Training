@@ -289,6 +289,10 @@
 // )}
 //     );
 
+
+
+
+
 // local reviews data
 const reviews = [
   { id:1,
@@ -324,6 +328,9 @@ const ranBtn = document.querySelector('.random-btn');
 
 // load starting item
 let currentItem = 3;
+
+
+
 
 // load initial item
 
@@ -367,3 +374,28 @@ ranBtn.addEventListener('click', function() {
 
       showPerson(currentItem);
 });
+
+
+
+
+
+
+
+function showPerson(person){
+const item = reviews[person];
+};
+
+
+let currentItem = 2;
+let reviews = [
+    {
+        name: kier,
+        img: src = "/Users/k-man/Desktop/repos/Java-Training/Content/ETERNITY COVER FINAL EP2.jpeg"
+    }
+]
+
+
+
+const preBtn 
+const forBtn
+const ranBtn
