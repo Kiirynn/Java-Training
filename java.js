@@ -289,26 +289,81 @@
 // )}
 //     );
 
+// local reviews data
+const reviews = [
+  { id:1,
+    name: 'gang 1',
+    job: "web developer",
+    img:  src="Content/IG FACE PHOTO.jpeg",
+    text: "ok i see you gang 1",
+  },
+  { id:2,
+    name: 'gang 2',
+    job: "UI Designer",
+    img: src="Content/kii 3 flippped.jpeg",
+    text: "ok i see you gang 2",
+  },
+  { id:3,
+    name: 'gang 3',
+    job: "gang member",
+    img: src="Content/kii 4_11zon.jpeg",
+    text: "roger that gang 3",
+  },
+];
 
-    const hex = [1,2,3,4,5,6,7,8,9,"A", "B", "C", "D", "E", "F", ];
-    const btn = document.getElementById("btn");
-    const color = document.querySelector(".color");
+// select items
+const img = document.getElementById('photo');
+const author = document.getElementById('author');
+const job = document.getElementById('job');
+const info = document.getElementById('info');
 
+// buttons
+const prevBtn = document.querySelector('.prev-btn');
+const forBtn = document.querySelector('.for-btn');
+const ranBtn = document.querySelector('.random-btn');
 
-btn.addEventListener('click', function (){
-    let hexColor = "#";
-    for(i = 0; i < 6; i++){
-    hexColor += hex[getRandomNumber()];
-    } ;
-   
+// load starting item
+let currentItem = 3;
 
- color.textContent = hexColor ;
- document.body.style.backgroundColor = hexColor;
-} );
- 
+// load initial item
 
+window.addEventListener('DOMContentLoaded', function (){
+ showPerson(currentItem);
+});
 
-function getRandomNumber() {
-    return Math.floor(Math.random()* hex.length)
- }
+// show person
+function showPerson(person) {
+const item = reviews[person];
+   img.src = item.img ;
+   author.textContent = item.name ;
+   job.textContent = item.job;
+   info.textContent = item.text;
+}
 
+// show next person 
+
+forBtn.addEventListener('click', function () {
+    currentItem++;
+       if(currentItem > reviews.length -1){
+        currentItem = 0;
+     }
+    showPerson(currentItem);
+});
+
+//prev person
+prevBtn.addEventListener('click', function () {
+    currentItem--;
+       if(currentItem < 0) {
+         currentItem = reviews.length - 1;
+       } 
+    showPerson(currentItem);
+});
+
+// carry on trying to figure out how to make random button work
+
+ranBtn.addEventListener('click', function() {
+    currentItem = Math.floor(Math.random() * reviews.length);
+    
+
+      showPerson(currentItem);
+});
