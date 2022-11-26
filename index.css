@@ -187,6 +187,10 @@ main {
 }
 
 
+
+
+
+
 .nav-active{
   transform: translateX(0%);
 }
@@ -203,14 +207,14 @@ main {
   }
 
 
-  .toggle .line-1{
+  .toggle .line1{
      transform: rotate(-45deg) translate(-5px,6px);
   }
 
-  .toggle .line-2{
+  .toggle .line2{
     opacity: 0;
   }
 
-  .toggle .line-3{
+  .toggle .line3{
     transform: rotate(45deg) translate(-5px,-6px);
   }

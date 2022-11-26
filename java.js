@@ -361,8 +361,9 @@
 const navSlide = () => {
     const burger = document.querySelector('.burger');
     const nav = document.querySelector('.links');
+    const links = document.querySelectorAll('.links li');
      //toggle nav
-    burger.addEventListener('click', function (){
+    burger.addEventListener('click', () => {
         nav.classList.toggle('nav-active');
        
        //animate links
@@ -371,7 +372,7 @@ const navSlide = () => {
              link.style.animation = '';
              }
              else {
-                 link.style.animation =  `navLinkFade 0.5s eae forwards ${index / 7 + 0.3}s`;
+                 link.style.animation =  `navLinkFade 0.5s ease forwards ${index / 7 + 0.3}s`;
              }
          });
 
