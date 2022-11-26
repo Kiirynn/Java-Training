@@ -217,6 +217,13 @@
 // combine a switch statement with a function 
 
 
+
+
+
+
+
+
+
 // let count = 0;
 
 // const value = document.querySelector('#value');
@@ -250,152 +257,130 @@
 
 
 
-// let count = 0;
-
-// let value = document.querySelector("#value");                        
-// let btns = document.querySelectorAll(".btn");
-
-
-// btns.forEach(function(btn) {
-//     btn.addEventListener('click', function(e){
-//       let styles = e.currentTarget.classList;
-      
-//       if(styles.contains('decrease')){
-//         count--;
-//       }
-     
-//       else if (styles.contains('increase')){
-//       count++ ;   
-//       }
-
-//       else{
-//         count = 0;
-//       }
-    
-//       if(count < 0) {
-//         value.style.color = "red";
-//       }
-     
-//       if(count > 0) {
-//         value.style.color = "green";
-//       }
-     
-//       if(count === 0){
-//         value.style.color = "yellow";
-//      }
-
-//     value.textContent = count;
-//     }
-// )}
-//     );
-
 
 
 
 
 // local reviews data
-const reviews = [
-  { id:1,
-    name: 'gang 1',
-    job: "web developer",
-    img:  src="Content/IG FACE PHOTO.jpeg",
-    text: "ok i see you gang 1",
-  },
-  { id:2,
-    name: 'gang 2',
-    job: "UI Designer",
-    img: src="Content/kii 3 flippped.jpeg",
-    text: "ok i see you gang 2",
-  },
-  { id:3,
-    name: 'gang 3',
-    job: "gang member",
-    img: src="Content/kii 4_11zon.jpeg",
-    text: "roger that gang 3",
-  },
-];
+// const reviews = [
+//   { id:1,
+//     name: 'gang 1',
+//     job: "web developer",
+//     img:  src="Content/IG FACE PHOTO.jpeg",
+//     text: "ok i see you gang 1",
+//   },
+//   { id:2,
+//     name: 'gang 2',
+//     job: "UI Designer",
+//     img: src="Content/kii 3 flippped.jpeg",
+//     text: "ok i see you gang 2",
+//   },
+//   { id:3,
+//     name: 'gang 3',
+//     job: "gang member",
+//     img: src="Content/kii 4_11zon.jpeg",
+//     text: "roger that gang 3",
+//   },
+// ];
 
-// select items
-const img = document.getElementById('photo');
-const author = document.getElementById('author');
-const job = document.getElementById('job');
-const info = document.getElementById('info');
+// // select items
+// const img = document.getElementById('photo');
+// const author = document.getElementById('author');
+// const job = document.getElementById('job');
+// const info = document.getElementById('info');
 
-// buttons
-const prevBtn = document.querySelector('.prev-btn');
-const forBtn = document.querySelector('.for-btn');
-const ranBtn = document.querySelector('.random-btn');
+// // buttons
+// const prevBtn = document.querySelector('.prev-btn');
+// const forBtn = document.querySelector('.for-btn');
+// const ranBtn = document.querySelector('.random-btn');
 
-// load starting item
-let currentItem = 3;
-
-
+// // load starting item
+// let currentItem = 3;
 
 
-// load initial item
 
-window.addEventListener('DOMContentLoaded', function (){
- showPerson(currentItem);
-});
 
-// show person
-function showPerson(person) {
-const item = reviews[person];
-   img.src = item.img ;
-   author.textContent = item.name ;
-   job.textContent = item.job;
-   info.textContent = item.text;
-}
+// // load initial item
 
-// show next person 
+// window.addEventListener('DOMContentLoaded', function (){
+//  showPerson(currentItem);
+// });
 
-forBtn.addEventListener('click', function () {
-    currentItem++;
-       if(currentItem > reviews.length -1){
-        currentItem = 0;
-     }
-    showPerson(currentItem);
-});
+// // show person
+// function showPerson(person) {
+// const item = reviews[person];
+//    img.src = item.img ;
+//    author.textContent = item.name ;
+//    job.textContent = item.job;
+//    info.textContent = item.text;
+// }
 
-//prev person
-prevBtn.addEventListener('click', function () {
-    currentItem--;
-       if(currentItem < 0) {
-         currentItem = reviews.length - 1;
-       } 
-    showPerson(currentItem);
-});
+// // show next person 
 
-// carry on trying to figure out how to make random button work
+// forBtn.addEventListener('click', function () {
+//     currentItem++;
+//        if(currentItem > reviews.length -1){
+//         currentItem = 0;
+//      }
+//     showPerson(currentItem);
+// });
 
-ranBtn.addEventListener('click', function() {
-    currentItem = Math.floor(Math.random() * reviews.length);
+// //prev person
+// prevBtn.addEventListener('click', function () {
+//     currentItem--;
+//        if(currentItem < 0) {
+//          currentItem = reviews.length - 1;
+//        } 
+//     showPerson(currentItem);
+// });
+
+// // carry on trying to figure out how to make random button work
+
+// ranBtn.addEventListener('click', function() {
+//     currentItem = Math.floor(Math.random() * reviews.length);
     
 
-      showPerson(currentItem);
-});
+//       showPerson(currentItem);
+// });
 
 
+// const navToggle = document.querySelector('.nav-toggle');
+// const links = document.querySelector('.links')
+
+// navToggle.addEventListener('click', function (){
+//     // console.log(navToggle.classList);
+//     if(links.classList.contains('show-links')){
+//         links.classList.remove('show-links');
+//     }
+//     else {
+//         links.classList.add('show-links');
+//     }
+
+// })
+
+const navSlide = () => {
+    const burger = document.querySelector('.burger');
+    const nav = document.querySelector('.links');
+     //toggle nav
+    burger.addEventListener('click', function (){
+        nav.classList.toggle('nav-active');
+       
+       //animate links
+        links.forEach((link, index) => {
+            if(link.style.animation){
+             link.style.animation = '';
+             }
+             else {
+                 link.style.animation =  `navLinkFade 0.5s eae forwards ${index / 7 + 0.3}s`;
+             }
+         });
+
+         //burger animation
+         burger.classList.toggle('toggle');
+        
+    });
 
 
-
-
-
-function showPerson(person){
-const item = reviews[person];
 };
 
-
-let currentItem = 2;
-let reviews = [
-    {
-        name: kier,
-        img: src = "/Users/k-man/Desktop/repos/Java-Training/Content/ETERNITY COVER FINAL EP2.jpeg"
-    }
-]
-
-
-
-const preBtn 
-const forBtn
-const ranBtn
+navSlide();
