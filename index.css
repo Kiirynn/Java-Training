@@ -168,8 +168,8 @@ main {
     position: absolute;
     right: 0px;
     height: 92vh;
-    top:8vh;
-    display:flex;
+    top: 8vh;
+    display: flex;
     flex-direction: column;
     align-items: center;
     width: 50%;
