@@ -358,30 +358,241 @@
 
 // })
 
-const navSlide = () => {
-    const burger = document.querySelector('.burger');
-    const nav = document.querySelector('.links');
-    const links = document.querySelectorAll('.links li');
-     //toggle nav
-    burger.addEventListener('click', () => {
-        nav.classList.toggle('nav-active');
+// const navSlide = () => {
+//     const burger = document.querySelector('.burger');
+//     const nav = document.querySelector('.links');
+//     const links = document.querySelectorAll('.links li');
+//      //toggle nav
+//     burger.addEventListener('click', () => {
+//         nav.classList.toggle('nav-active');
        
-       //animate links
-        links.forEach((link, index) => {
-            if(link.style.animation){
-             link.style.animation = '';
-             }
-             else {
-                 link.style.animation =  `navLinkFade .3s ease forwards ${index / 7 + 0.5}s`;
-             }
-         });
+//        //animate links
+//         links.forEach((link, index) => {
+//             if(link.style.animation){
+//              link.style.animation = '';
+//              }
+//              else {
+//                  link.style.animation = `navLinkFade .3s ease forwards ${index / 7 + 0.5}s`;
+//              }
+//          });
 
-         //burger animation
-         burger.classList.toggle('toggle');
+//          //burger animation
+//          burger.classList.toggle('toggle');
         
+//     });
+
+
+// };
+
+// navSlide();
+
+
+
+// const btns = document.querySelectorAll('.tab-btn');
+// const about = document.querySelectorAll('.about');
+// const articles = document.querySelectorAll('.content');
+
+// about.addEventListener('click', function(e) {
+//    const id = e.target.dataset.id;
+//    if(id){
+//       btns.forEach(function(btn){
+//         btn.classList.remove('active');
+//         e.target.classList.add('active');
+//       });
+//       articles.forEach(function(article){
+//         article.classList.remove('active')
+//       });
+//       const element = document.getElementById(id);
+//       element.classList.add('active');
+//    }
+// })
+
+
+// const anon = (something1 = 'pussy', something2 = 'money') => {
+//       console.log(`dont be a ${something1} with ${something2}`)
+// };
+
+// anon();
+
+
+// const bill = (products, tax) => {
+//     let total = 0;
+//     for(let i = 0; i < products.length; i++){
+//         total += products[i] + products[i] * tax;
+//     }
+//     return total;
+// }
+
+// const bill = (products, tax) => {
+//    let total = 0;
+
+//    for(let i = 0; i < products.length; i++){
+//     total += products[i] + products[i] * tax;
+// }
+// return total;
+// };
+
+
+// console.log(bill([10, 15, 30], 0.2 ));
+
+// const ul = document.querySelector('people');
+
+// const people = ['mario', 'luigi', 'ryu', 'shaun', 'chun-li'];
+
+// let html = ``;
+
+// people.forEach(person => {
+
+//     html += `<li style="color: purple">${person}</li>`;
+// });
+
+// console.log(html);
+// ul.html = html ;
+
+
+
+
+
+
+// const footer = document.createElement('footer');
+// const ulList = document.createElement('ul');
+// const liList = document.createElement('li');
+// const aTags = document.createElement('a');
+// const nextBtn = document.createElement('button');
+// const prevBtn = document.createElement('button');
+// const aElementBtn = document.createElement('button');
+// const Btns = document.querySelectorAll('Btn');
+// const content = document.querySelector('.content');
+
+// let currentItem = 0;
+
+// aTags.href = "www.google.com";
+
+// document.body.appendChild(footer);
+
+// footer.id = 'footer';
+// nextBtn.id = 'next Btn';
+// prevBtn.id = 'prev Btn';
+// aElementBtn.id = 'aElement Btn';
+
+// footer.appendChild(ulList);
+// ulList.appendChild(liList);
+// ulList.appendChild(nextBtn);
+// ulList.appendChild(prevBtn);
+// ulList.appendChild(aElementBtn);
+// liList.appendChild(aTags);
+
+// prevBtn.innerHTML = 'Prev';
+// nextBtn.innerHTML = 'Next';
+// aElementBtn.innerHTML = 'Create A';
+
+// const about = document.querySelector('.about');
+// const btns = document.querySelectorAll('.tab-btn');
+// const content = document.querySelectorAll('.content');
+
+// about.addEventListener('click', (e) => {
+//     const id = e.target.dataset.id;
+    
+    
+//     if(id){
+//          btns.forEach(function (btn){
+//             btn.classList.remove('active')
+
+            
+//         });
+//         e.target.classList.add('active')
+        
+
+//         content.forEach(function (contents){
+            
+//             contents.classList.remove('active');
+    
+           
+        
+//         });
+   
+        
+    
+//      const element = document.getElementById(id);
+
+//     element.classList.add('active');
+
+// }
+// }) ;
+
+
+const btns = document.querySelectorAll('.btn');
+// const reset = document.querySelector('.reset')
+// const increase = document.querySelector('.increase')
+const counter = document.querySelector('#counter');
+let count = 0;
+
+
+btns.forEach(function (btn) {
+    btn.addEventListener('click', (e) => {
+        const styles = e.currentTarget.classList;
+        
+        if(styles.contains('decrease')){
+            count--;
+        }
+        
+        
+        else if(styles.contains('increase')){
+        count++;
+         }
+
+        else {
+           count = 0;
+        }
+     
+
+        
+        if(count < 0 ){
+            counter.style.color = "red";
+        }
+        if(count > 0){
+           counter.style.color = "green";
+        }
+        if (count === 0){
+            counter.style.color = "yellow";
+        }
+
+        counter.textContent = count ;
+
     });
 
 
-};
+});
 
-navSlide();
+
+
+      
+
+
+
+// increase.addEventListener('click', (e) =>{
+//     if(e.target.contains('increase')){
+//         count++;
+//     };
+   
+// });
+
+// reset.addEventListener('click', (e) =>{
+//     e.target.contains('reset');
+//     count == 0;
+// });
+
+
+
+// counter.addEventListener(function () {
+//     if(count < 0 ){
+//         return counter.style.backgroundColor = "red";
+//     }
+//     if(count > 0){
+//         return counter.style.backgroundColor = "green";
+//     }
+//     if (count == 0){
+//        return counter.innerText.style.backgroundColor = "yellow";
+//     }
+// });
+
