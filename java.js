@@ -521,78 +521,150 @@
 // }) ;
 
 
-const btns = document.querySelectorAll('.btn');
-// const reset = document.querySelector('.reset')
-// const increase = document.querySelector('.increase')
 const counter = document.querySelector('#counter');
+const btns = document.querySelectorAll('.btn');
 let count = 0;
 
 
-btns.forEach(function (btn) {
+btns.forEach(function (btn){
+
     btn.addEventListener('click', (e) => {
-        const styles = e.currentTarget.classList;
-        
-        if(styles.contains('decrease')){
+         const styles = e.currentTarget.classList;
+
+         if(styles.contains('decrease')){
             count--;
-        }
-        
-        
-        else if(styles.contains('increase')){
-        count++;
          }
 
-        else {
-           count = 0;
-        }
-     
+         else if(styles.contains('increase')){
+            count++;
+         }
+
+         else {
+            count = 0
+         }
+
+         if (count > 0){
+            counter.style.color = "green"
+         }
+
+         if (count < 0){
+            counter.style.color = "red"
+         }
+
+         if (count === 0){
+            counter.style.color = "yellow"
+         }
+
+         counter.innerText = count;
+    });
+    
+})
+
+
+const hex = [0,1,2,3,4,5,6,7,8,9, "A", "B", "C", "D", "E", "F",];
+const color = document.querySelector('.color');
+const btn = document.querySelector('.ranBtn')
+// const value = document.querySelector('');
+
+btn.addEventListener('click', () => {
+    let hexColor = '#';
+    for(i = 0 ; i < 6 ; i++){
+        hexColor += hex[getRandomNumber()];
+    }
+    
+
+   
+   
+    document.body.style.backgroundColor = hexColor ;
+    color.innerText = hexColor;
+
+});
+
+function getRandomNumber(){
+  return  Math.floor(Math.random() * hex.length);
+};
+
+
+
+
+
+
+// about section
+
+const articles = document.querySelectorAll('.content');
+const tabBtns = document.querySelectorAll('.tab-btn');
+const about = document.querySelector('.about');
+
+
+about.addEventListener('click', (e) => {
+    const id = e.target.dataset.id ;
+
+    if(id){
+    tabBtns.forEach( (btn) => {
+        btn.classList.remove('active');
 
         
-        if(count < 0 ){
-            counter.style.color = "red";
-        }
-        if(count > 0){
-           counter.style.color = "green";
-        }
-        if (count === 0){
-            counter.style.color = "yellow";
-        }
-
-        counter.textContent = count ;
-
     });
+    e.target.classList.add('active');
 
+       articles.forEach((article) =>  {
+        article.classList.remove('active');
+
+        
+       });
+       const element = document.getElementById(id);
+       element.classList.add('active');
+      }
+   });
+
+
+
+
+
+
+
+// photos gallary
+
+const images = document.querySelector('.about-img');
+const photos = document.querySelectorAll('.photo-container');
+const tabBtns2 = document.querySelectorAll('.tab-btn2');
+
+
+images.addEventListener('click', (e) => {
+   const id = e.target.dataset.id;
+
+   if(id){
+      tabBtns2.forEach((tabBtn2) => {
+           tabBtn2.classList.remove('active');
+      });
+      e.target.classList.add('active');
+
+    photos.forEach((photo) => {
+      photo.classList.remove('active');
+      });
+
+   const element = document.getElementById(id);
+   element.classList.add('active');
+   }
 
 });
 
 
 
-      
 
 
 
-// increase.addEventListener('click', (e) =>{
-//     if(e.target.contains('increase')){
-//         count++;
-//     };
-   
-// });
-
-// reset.addEventListener('click', (e) =>{
-//     e.target.contains('reset');
-//     count == 0;
-// });
 
 
+// scroll to top button 
 
-// counter.addEventListener(function () {
-//     if(count < 0 ){
-//         return counter.style.backgroundColor = "red";
-//     }
-//     if(count > 0){
-//         return counter.style.backgroundColor = "green";
-//     }
-//     if (count == 0){
-//        return counter.innerText.style.backgroundColor = "yellow";
-//     }
-// });
+
+const topBtn = document.querySelector("#top");
+
+topBtn.addEventListener('click', () => {
+    window.scrollTo({top : 0, behavior :'smooth' }) ;
+
+    topBtn();
+});
+
 
