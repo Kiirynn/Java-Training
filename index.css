@@ -1,83 +1,18 @@
-/* 
 
 
-/* 
-.div1 {
-    display: flex ;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-img {
-    width: 300px;
-}
-
-.BDK {
-    display: flex ;
-    justify-content: space-around;
-    align-items: center;
-    color: red;
-   
-   
-}
-
-a:hover {
-color: black;
-transform: 5px;
-transition: 5ms;
-}
-
-.dork {
-    display: flex;
-   
-}
-
-.gang {
-    display: flex;
-    justify-content: space-evenly;
-    padding: 20px ;
-    text-align: center;
-}
-
-.butt {
-    width: 300px ;
-    height: 150px ;
-}
-
-#background {
-    transition: 1s;
-}
-
-body {
-    margin: 0;
-    font-family: 'Inter', sans-serif;
-  }
-  
-  main {
-    height: 100vh; */
-/* display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 2em;
-    box-sizing: border-box;
-    text-align: center;
-  } */
-/* 
 main {
     display: flex ;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-} */
+} 
 
-/* img {
+  img {
     width: 300px ;
     border-radius: 150px;
-  } */
+  } 
 
-/*   
+  
   
   *{
     margin: 0px;
@@ -90,16 +25,26 @@ main {
     justify-content: space-around;
     align-items: center;
     min-height: 8vh;
-    background-color: orange;
+    background-color: transparent;
+    padding: 30px;
    } 
    
+   .nav-header {
+  
+    padding: 30px;
+   }
+  
+  
    .links{
     display: flex;
     justify-content: space-evenly;
+    padding: 30px;
     width: 30%;
 }
 
-
+.burger {
+  padding: 40px;
+}
 
   h4 {
     color:white;
@@ -110,6 +55,7 @@ main {
   
 
  .links a {
+  padding: 30px;
    text-decoration: none;
    color: white;
    letter-spacing: 3px;
@@ -124,7 +70,7 @@ main {
 }
 
  .links li{
-  
+
   list-style: none;
  }
 
@@ -134,18 +80,20 @@ main {
     background-color: white;
     margin: 3px;
     transition: all 0.3s ease;
-
+   
 }
 
 
 
-.line-1, .line-2 {
+.line1, .line2 {
     transform: 45deg;
 }
 
 
 
-
+.line1, .line2, .line3 {
+  background-color: white;
+}
 
 
 
@@ -180,6 +128,7 @@ main {
    .burger{
     display: block;
     cursor: pointer;
+    
    }
 }
 
@@ -214,7 +163,7 @@ main {
 
   .toggle .line3{
     transform: rotate(45deg) translate(-5px,-6px);
-  } */
+  }
 
 /* John smilga css */
 
@@ -295,8 +244,7 @@ img {
 
 h1,
 h2,
-h3,
-h4 {
+h3 {
   letter-spacing: var(--spacing);
   text-transform: capitalize;
   line-height: 1.25;
@@ -330,15 +278,14 @@ p {
     font-size: 1.75rem;
   }
   h4 {
-    font-size: 1rem;
+    /* font-size: 1rem; */
   }
   body {
     font-size: 1rem;
   }
   h1,
   h2,
-  h3,
-  h4 {
+  h3 {
     line-height: 1;
   }
 }
