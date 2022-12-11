@@ -20,6 +20,9 @@ main {
     box-sizing: border-box;
   }
 
+
+  /* nav bar */
+  
   nav {
     display: flex;
     justify-content: space-around;
@@ -97,6 +100,12 @@ main {
 
 
 
+
+/* navbar media */
+
+
+
+
 @media screen and (max-width: 1024px){
    .links{
     width: 60%;
@@ -119,6 +128,7 @@ main {
     width: 50%;
     transform: translateX(100%); 
     transition: transform 0.5s ease-in;
+    background: var(--clr-grey-1) ;
    }
 
    .links li{
@@ -165,7 +175,17 @@ main {
     transform: rotate(45deg) translate(-5px,-6px);
   }
 
-/* John smilga css */
+
+  footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+
+
+
+  /* John smilga css */
 
 :root {
   /* dark shades of primary color*/

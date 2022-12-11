@@ -564,7 +564,7 @@ btns.forEach(function (btn){
 const hex = [0,1,2,3,4,5,6,7,8,9, "A", "B", "C", "D", "E", "F",];
 const color = document.querySelector('.color');
 const btn = document.querySelector('.ranBtn')
-// const value = document.querySelector('');
+
 
 btn.addEventListener('click', () => {
     let hexColor = '#';
@@ -650,9 +650,29 @@ images.addEventListener('click', (e) => {
 });
 
 
+// navbar
 
 
 
+const navSlide = () => {
+
+const nav = document.querySelector('nav');
+   const burger = document.querySelector('.burger');
+   const links = document.querySelectorAll('.links');
+   const navLinks = document.querySelectorAll('.links li')
+
+   burger.addEventListener('click', () => {
+      nav.classList.toggle('nav-active');
+     
+
+      navLinks.forEach((link, index) => {
+         link.style.animation = `navLinkFade 0.5s ease forwards ${index /7}s`
+      })
+
+   })
+}
+
+navSlide()
 
 
 
