@@ -1,10 +1,12 @@
 
 
-main {
+body {
     display: flex ;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-color: transparent;
+    /* min-height: 100vh; */
 } 
 
   img {
@@ -18,7 +20,27 @@ main {
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
+    
   }
+
+.bkgd-video {
+ 
+
+}
+
+.video-container {
+  height:0;
+  z-index: -100;
+  background-size: cover;
+  /* display: flex;
+  justify-content: center; */
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+}
+
 
 
   /* nav bar */
@@ -43,10 +65,12 @@ main {
     justify-content: space-evenly;
     padding: 30px;
     width: 30%;
+   
 }
 
 .burger {
   padding: 40px;
+  color:white;
 }
 
   h4 {
@@ -75,6 +99,11 @@ main {
  .links li{
 
   list-style: none;
+ }
+
+  li:hover {
+     transform: scale(1.1);
+     transition: 0.5s;
  }
 
 .burger div{
@@ -110,6 +139,9 @@ main {
    .links{
     width: 60%;
    }
+   .burger {
+  display: hidden;
+  }
 }
 
 
@@ -128,7 +160,9 @@ main {
     width: 50%;
     transform: translateX(100%); 
     transition: transform 0.5s ease-in;
-    background: var(--clr-grey-1) ;
+    background: black;
+    border-radius: 7px;
+    opacity: 0.9;
    }
 
    .links li{
@@ -140,27 +174,32 @@ main {
     cursor: pointer;
     
    }
+
+   @keyframes navLinkFade{
+    from {
+      opacity: 0 ;
+      transform: translateX(50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0px);
+     }
+    }
+
+ 
+    
 }
-
-
-
-
 
 
 .nav-active{
   transform: translateX(0%);
+  
 }
 
-@keyframes navLinkFade{
-  from {
-    opacity: 0 ;
-    transform: translateX(50px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0px);
-   }
-  }
+
+
+
+
 
 
   .toggle .line1{
@@ -187,7 +226,8 @@ main {
 
   /* John smilga css */
 
-:root {
+ 
+/* :root {
   /* dark shades of primary color*/
   --clr-primary-1: hsl(205, 86%, 17%);
   --clr-primary-2: hsl(205, 77%, 27%);
@@ -228,7 +268,8 @@ main {
   --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
   --max-width: 1170px;
   --fixed-width: 620px;
-}
+}  */
+
 /*
 =============== 
 Global Styles
@@ -260,6 +301,8 @@ img:not(.logo) {
 }
 img {
   display: block;
+  border: 2px solid white;
+  border-radius: 8px;
 }
 
 h1,
@@ -324,6 +367,7 @@ p {
   cursor: pointer;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
   border-radius: var(--radius);
+  
 }
 
 .btn:hover {
@@ -389,12 +433,16 @@ About
   border-radius: var(--radius);
   display: grid;
   grid-template-rows: auto 1fr;
+  border: 2px solid white;
+  border-radius: 8px;
 }
 .btn-container, .btn-container2  {
   border-top-left-radius: var(--radius);
   border-top-right-radius: var(--radius);
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
+  /* border: 2px solid white;
+  border-radius: 8px; */
 }
 
 .tab-btn:nth-child(1) {
@@ -423,6 +471,8 @@ About
   cursor: pointer;
   transition: var(--transition);
   letter-spacing: var(--spacing);
+  border: 2px solid white;
+  border-radius: 8px;
 }
 
 .tab-btn:hover:not(.active) {

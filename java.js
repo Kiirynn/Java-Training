@@ -653,26 +653,23 @@ images.addEventListener('click', (e) => {
 // navbar
 
 
-
 const navSlide = () => {
-
-const nav = document.querySelector('nav');
+   const links = document.querySelectorAll('.links li');
+   const nav = document.querySelector('nav');
    const burger = document.querySelector('.burger');
-   const links = document.querySelectorAll('.links');
-   const navLinks = document.querySelectorAll('.links li')
 
    burger.addEventListener('click', () => {
-      nav.classList.toggle('nav-active');
+       nav.classList.toggle('nav-active');
+
      
+       });
 
-      navLinks.forEach((link, index) => {
-         link.style.animation = `navLinkFade 0.5s ease forwards ${index /7}s`
-      })
-
-   })
+       links.forEach((link, index) => {
+         link.style.animation = `navLinkFade 0.3s ease forwards ${index / 7 + 1.2 }s` ;
+   });
 }
 
-navSlide()
+navSlide();
 
 
 
