@@ -538,3 +538,52 @@ About
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
   border-radius: var(--radius);
 }
+
+/* calculator */
+
+
+.calc-container {
+    width: 350px;
+    margin: 10vh auto 0 auto;
+    border: 1px solid #999;
+
+}
+
+#display{
+  text-align: right;
+  max-width: 100%;
+  height: 100px;
+  padding: 16px 8px;
+  font-size: 25px;
+  color: white;
+  background-color: black;
+}
+
+.buttons {
+  display: grid;
+  border-bottom: 1px solid whitesmoke;
+  border-left: 1px solid whitesmoke;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  
+}
+
+.buttons > div {
+  border-top: 1px solid whitesmoke;
+  border-right: 1px solid whitesmoke;
+}
+
+.calc-btn {
+  border: 1px solid whitesmoke;
+  text-align: center;
+  font-size: 70px;
+  cursor: pointer;
+}
+
+.calc-btn:hover {
+  background-color: white;
+  color: black;
+}
+
+#equal {
+background-color: blue;
+}
