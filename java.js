@@ -720,5 +720,209 @@ buttons.map( button => {
          //  try()
         }
    })
+
+// blackjack game
  
 })
+
+
+const cards = [
+   {id:1,
+      img: src='/Users/k-man/Desktop/repos/Java-Training/Cards/2_of_clubs.png',
+      value: 2,
+       },
+   {id: 2,
+      img: src='/Users/k-man/Desktop/repos/Java-Training/Cards/2_of_diamonds.png',
+      value: 2,
+   },
+   {id: 3,
+      img: src='/Users/k-man/Desktop/repos/Java-Training/Cards/2_of_hearts.png',
+       value: 2,
+      },
+   // '/Users/k-man/Downloads/PNG-cards-1.3/2_of_spades.png',
+   
+   // '/Users/k-man/Downloads/PNG-cards-1.3/3_of_clubs.png',
+   // '/Users/k-man/Downloads/PNG-cards-1.3/3_of_diamonds.png',
+   // '/Users/k-man/Downloads/PNG-cards-1.3/3_of_hearts.png',
+   // '/Users/k-man/Downloads/PNG-cards-1.3/3_of_spades.png',
+   
+   // '/Users/k-man/Downloads/PNG-cards-1.3/4_of_clubs.png',
+   // '/Users/k-man/Downloads/PNG-cards-1.3/4_of_diamonds.png',
+   // '/Users/k-man/Downloads/PNG-cards-1.3/4_of_hearts.png',
+   // '/Users/k-man/Downloads/PNG-cards-1.3/4_of_spades.png',
+   
+   // '/Users/k-man/Downloads/PNG-cards-1.3/5_of_clubs.png',
+   // '/Users/k-man/Downloads/PNG-cards-1.3/5_of_diamonds.png',
+   // '/Users/k-man/Downloads/PNG-cards-1.3/5_of_hearts.png',
+   // '/Users/k-man/Downloads/PNG-cards-1.3/5_of_spades.png',
+
+   // '/Users/k-man/Downloads/PNG-cards-1.3/6_of_clubs.png',
+   // '/Users/k-man/Downloads/PNG-cards-1.3/6_of_diamonds.png',
+   // '/Users/k-man/Downloads/PNG-cards-1.3/6_of_hearts.png',
+   // '/Users/k-man/Downloads/PNG-cards-1.3/6_of_spades.png',
+
+   // '/Users/k-man/Downloads/PNG-cards-1.3/7_of_clubs.png',
+   // '/Users/k-man/Downloads/PNG-cards-1.3/7_of_diamonds.png',
+   // '/Users/k-man/Downloads/PNG-cards-1.3/7_of_hearts.png',
+   // '/Users/k-man/Downloads/PNG-cards-1.3/7_of_spades.png',
+
+   // '/Users/k-man/Downloads/PNG-cards-1.3/8_of_clubs.png',
+   // '/Users/k-man/Downloads/PNG-cards-1.3/8_of_diamonds.png',
+   // '/Users/k-man/Downloads/PNG-cards-1.3/8_of_hearts.png',
+   // '/Users/k-man/Downloads/PNG-cards-1.3/8_of_spades.png',
+
+   // '/Users/k-man/Downloads/PNG-cards-1.3/9_of_clubs.png',
+   // '/Users/k-man/Downloads/PNG-cards-1.3/9_of_diamonds.png',
+   // '/Users/k-man/Downloads/PNG-cards-1.3/9_of_spades.png',
+   // '/Users/k-man/Downloads/PNG-cards-1.3/9_of_spades.png',
+
+   // '/Users/k-man/Downloads/PNG-cards-1.3/10_of_clubs.png',
+   // '/Users/k-man/Downloads/PNG-cards-1.3/10_of_diamonds.png',
+   // '/Users/k-man/Downloads/PNG-cards-1.3/10_of_hearts.png',
+   // '/Users/k-man/Downloads/PNG-cards-1.3/10_of_spades.png',
+
+   // '/Users/k-man/Downloads/PNG-cards-1.3/ace_of_clubs.png',
+   // '/Users/k-man/Downloads/PNG-cards-1.3/ace_of_diamonds.png',
+   // '/Users/k-man/Downloads/PNG-cards-1.3/ace_of_hearts.png',
+   // '/Users/k-man/Downloads/PNG-cards-1.3/ace_of_spades2.png',
+
+   // '/Users/k-man/Downloads/PNG-cards-1.3/jack_of_clubs2.png',
+   // '/Users/k-man/Downloads/PNG-cards-1.3/jack_of_diamonds2.png',
+   // '/Users/k-man/Downloads/PNG-cards-1.3/jack_of_hearts2.png',
+   // '/Users/k-man/Downloads/PNG-cards-1.3/jack_of_spades2.png',
+
+   // '/Users/k-man/Downloads/PNG-cards-1.3/king_of_clubs2.png',
+   // '/Users/k-man/Downloads/PNG-cards-1.3/king_of_diamonds2.png',
+   // '/Users/k-man/Downloads/PNG-cards-1.3/king_of_hearts2.png',
+   // '/Users/k-man/Downloads/PNG-cards-1.3/king_of_spades2.png',
+
+   // '/Users/k-man/Downloads/PNG-cards-1.3/queen_of_clubs2.png',
+   // '/Users/k-man/Downloads/PNG-cards-1.3/queen_of_diamonds2.png',
+   // '/Users/k-man/Downloads/PNG-cards-1.3/queen_of_hearts2.png',
+   // '/Users/k-man/Downloads/PNG-cards-1.3/queen_of_spades2.png', 
+];
+const pCountDisplay = document.getElementById('Pcount');
+const dCountDisplay = document.getElementById('Dcount');
+const dealerCard = document.querySelectorAll(".card-containerD");
+const playerCard1 = document.querySelector(".player-container1");
+const playerCard2 = document.querySelector(".player-container2");
+const hitBtn = document.querySelector('#hit');
+const stayBtn = document.querySelector('#stay');
+
+
+let currentCard = 0;
+let pCount = 0;
+let dCount = 0;
+
+window.addEventListener('DOMContentLoaded', function (){
+ showCard(currentCard);
+});
+
+hitBtn.addEventListener('click', () => {
+  
+   currentCard = Math.floor(Math.random() * cards.length);
+   
+   showCard(currentCard);
+   
+      
+  });
+  
+
+  
+
+
+function showCard(card) {
+    const item = cards[card];
+       playerCard1.src = item.playerCard1 ;
+       pCount.textContent = item.value;
+  
+      
+};
+
+showCard(currentCard);
+
+
+// for(i = 0 ; i < 52 ; i++){}
+
+
+// local reviews data
+// const reviews = [
+//   { id:1,
+//     name: 'gang 1',
+//     job: "web developer",
+//     img:  src="Content/IG FACE PHOTO.jpeg",
+//     text: "ok i see you gang 1",
+//   },
+//   { id:2,
+//     name: 'gang 2',
+//     job: "UI Designer",
+//     img: src="Content/kii 3 flippped.jpeg",
+//     text: "ok i see you gang 2",
+//   },
+//   { id:3,
+//     name: 'gang 3',
+//     job: "gang member",
+//     img: src="Content/kii 4_11zon.jpeg",
+//     text: "roger that gang 3",
+//   },
+// ];
+
+// // select items
+// const img = document.getElementById('photo');
+// const author = document.getElementById('author');
+// const job = document.getElementById('job');
+// const info = document.getElementById('info');
+
+// // buttons
+// const prevBtn = document.querySelector('.prev-btn');
+// const forBtn = document.querySelector('.for-btn');
+// const ranBtn = document.querySelector('.random-btn');
+
+// // load starting item
+// let currentItem = 3;
+
+
+
+
+// // load initial item
+
+// window.addEventListener('DOMContentLoaded', function (){
+//  showPerson(currentItem);
+// });
+
+// // show person
+// function showPerson(person) {
+// const item = reviews[person];
+//    img.src = item.img ;
+//    author.textContent = item.name ;
+//    job.textContent = item.job;
+//    info.textContent = item.text;
+// }
+
+// // show next person 
+
+// forBtn.addEventListener('click', function () {
+//     currentItem++;
+//        if(currentItem > reviews.length -1){
+//         currentItem = 0;
+//      }
+//     showPerson(currentItem);
+// });
+
+// //prev person
+// prevBtn.addEventListener('click', function () {
+//     currentItem--;
+//        if(currentItem < 0) {
+//          currentItem = reviews.length - 1;
+//        } 
+//     showPerson(currentItem);
+// });
+
+// // carry on trying to figure out how to make random button work
+
+// ranBtn.addEventListener('click', function() {
+//     currentItem = Math.floor(Math.random() * reviews.length);
+    
+
+//       showPerson(currentItem);
+// });
