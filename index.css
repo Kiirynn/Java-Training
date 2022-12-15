@@ -587,3 +587,17 @@ About
 #equal {
 background-color: blue;
 }
+
+
+/* Blackjack css */
+
+.card-containerp {
+  display:flex ;
+}
+
+
+.player-container1, .player-container2, .card-containerD {
+  
+
+}
+

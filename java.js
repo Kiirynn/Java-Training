@@ -721,24 +721,31 @@ buttons.map( button => {
         }
    })
 
-// blackjack game
+
+
+
+   // blackjack game
  
 })
 
 
 const cards = [
    {id:1,
-      img: src='/Users/k-man/Desktop/repos/Java-Training/Cards/2_of_clubs.png',
+      playerCard1: src='Cards/2_of_clubs.png',
+      
       value: 2,
        },
    {id: 2,
-      img: src='/Users/k-man/Desktop/repos/Java-Training/Cards/2_of_diamonds.png',
+      playerCard1: src='Cards/2_of_diamonds.png',
+      
       value: 2,
    },
    {id: 3,
-      img: src='/Users/k-man/Desktop/repos/Java-Training/Cards/2_of_hearts.png',
+      playerCard1: src='Cards/2_of_hearts.png',
+      
        value: 2,
       },
+   
    // '/Users/k-man/Downloads/PNG-cards-1.3/2_of_spades.png',
    
    // '/Users/k-man/Downloads/PNG-cards-1.3/3_of_clubs.png',
@@ -801,45 +808,123 @@ const cards = [
    // '/Users/k-man/Downloads/PNG-cards-1.3/queen_of_hearts2.png',
    // '/Users/k-man/Downloads/PNG-cards-1.3/queen_of_spades2.png', 
 ];
+
+const cards2 = [
+   {id:1,
+        
+      playerCard2: src='Cards/2_of_clubs.png',
+      value: 2,
+       },
+   {id: 2,
+      
+      playerCard2: src='Cards/2_of_diamonds.png',
+      value: 2,
+   },
+   {id: 3,
+      
+      playerCard2: src='Cards/2_of_hearts.png',
+       value: 2,
+      },
+];
 const pCountDisplay = document.getElementById('Pcount');
 const dCountDisplay = document.getElementById('Dcount');
-const dealerCard = document.querySelectorAll(".card-containerD");
-const playerCard1 = document.querySelector(".player-container1");
-const playerCard2 = document.querySelector(".player-container2");
+const dealerCont = document.querySelector(".card-containerD");
+const playerCont = document.querySelector(".card-containerp");
+const playerCard1 = document.querySelector(".playerCard1");
+const playerCard2 = document.querySelector(".playerCard2");
 const hitBtn = document.querySelector('#hit');
 const stayBtn = document.querySelector('#stay');
+const dealBtn = document.querySelector('#deal');
+
 
 
 let currentCard = 0;
+let currentCard2 = 0;
 let pCount = 0;
 let dCount = 0;
 
-window.addEventListener('DOMContentLoaded', function (){
- showCard(currentCard);
-});
+// window.addEventListener('DOMContentLoaded', function (){
+//  showCard(currentCard);
+// });
 
-hitBtn.addEventListener('click', () => {
+
+
+dealBtn.addEventListener('click', () => {
   
    currentCard = Math.floor(Math.random() * cards.length);
+   currentCard2 = Math.floor(Math.random() * cards2.length);
    
-   showCard(currentCard);
    
+   function showCard(card) {
+      const item = cards[card];
+         playerCard1.src = item.playerCard1 ;
+         
+         // pCount.textContent = item.value;
+         // pCount++;
+         
+    };
+
+  function showCard2(card) {
+   const item = cards2[card];
+      playerCard2.src = item.playerCard2 ;
       
-  });
-  
-
-  
-
-
-function showCard(card) {
-    const item = cards[card];
-       playerCard1.src = item.playerCard1 ;
-       pCount.textContent = item.value;
-  
+      // pCount.textContent = item.value;
+      // pCount++;
       
-};
+ };
+  
+ showCard(currentCard);
+ showCard2(currentCard2);
+   
+   
+   
+  
+   
+});
 
-showCard(currentCard);
+
+ hitBtn.addEventListener('click', (e) => {
+   
+
+  
+   for(let classChange = i = 0 ; i < 1 ; i++ ){
+     e.forEach(() => {
+      
+      
+      const newPlayerCard = document.createElement('img');
+      newPlayerCard.classList.add(`'playerCard${classChange}'`);
+      playerCont.appendChild(newPlayerCard);
+
+     });
+      
+      
+     
+   }}
+);
+   
+
+ 
+
+
+
+  
+
+  
+
+// about.addEventListener('click', (e) => {
+//    const id = e.target.dataset.id ;
+
+//    if(id){
+//    tabBtns.forEach( (btn) => {
+//        btn.classList.remove('active');
+
+
+// const value = () => {
+//    for(i = 0 ;  i < 21; i++)
+
+// }
+   
+
 
 
 // for(i = 0 ; i < 52 ; i++){}
