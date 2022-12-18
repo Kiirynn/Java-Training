@@ -728,110 +728,101 @@ buttons.map( button => {
  
 })
 
+// const cardLinks = [   // '/Users/k-man/Downloads/PNG-cards-1.3/3_of_clubs.png',
+// // '/Users/k-man/Downloads/PNG-cards-1.3/3_of_diamonds.png',
+// // '/Users/k-man/Downloads/PNG-cards-1.3/3_of_hearts.png',
+// // '/Users/k-man/Downloads/PNG-cards-1.3/3_of_spades.png',
+
+// // '/Users/k-man/Downloads/PNG-cards-1.3/4_of_clubs.png',
+// // '/Users/k-man/Downloads/PNG-cards-1.3/4_of_diamonds.png',
+// // '/Users/k-man/Downloads/PNG-cards-1.3/4_of_hearts.png',
+// // '/Users/k-man/Downloads/PNG-cards-1.3/4_of_spades.png',
+
+// // '/Users/k-man/Downloads/PNG-cards-1.3/5_of_clubs.png',
+// // '/Users/k-man/Downloads/PNG-cards-1.3/5_of_diamonds.png',
+// // '/Users/k-man/Downloads/PNG-cards-1.3/5_of_hearts.png',
+// // '/Users/k-man/Downloads/PNG-cards-1.3/5_of_spades.png',
+
+// // '/Users/k-man/Downloads/PNG-cards-1.3/6_of_clubs.png',
+// // '/Users/k-man/Downloads/PNG-cards-1.3/6_of_diamonds.png',
+// // '/Users/k-man/Downloads/PNG-cards-1.3/6_of_hearts.png',
+// // '/Users/k-man/Downloads/PNG-cards-1.3/6_of_spades.png',
+
+// // '/Users/k-man/Downloads/PNG-cards-1.3/7_of_clubs.png',
+// // '/Users/k-man/Downloads/PNG-cards-1.3/7_of_diamonds.png',
+// // '/Users/k-man/Downloads/PNG-cards-1.3/7_of_hearts.png',
+// // '/Users/k-man/Downloads/PNG-cards-1.3/7_of_spades.png',
+
+// // '/Users/k-man/Downloads/PNG-cards-1.3/8_of_clubs.png',
+// // '/Users/k-man/Downloads/PNG-cards-1.3/8_of_diamonds.png',
+// // '/Users/k-man/Downloads/PNG-cards-1.3/8_of_hearts.png',
+// // '/Users/k-man/Downloads/PNG-cards-1.3/8_of_spades.png',
+
+// // '/Users/k-man/Downloads/PNG-cards-1.3/9_of_clubs.png',
+// // '/Users/k-man/Downloads/PNG-cards-1.3/9_of_diamonds.png',
+// // '/Users/k-man/Downloads/PNG-cards-1.3/9_of_spades.png',
+// // '/Users/k-man/Downloads/PNG-cards-1.3/9_of_spades.png',
+
+// // '/Users/k-man/Downloads/PNG-cards-1.3/10_of_clubs.png',
+// // '/Users/k-man/Downloads/PNG-cards-1.3/10_of_diamonds.png',
+// // '/Users/k-man/Downloads/PNG-cards-1.3/10_of_hearts.png',
+// // '/Users/k-man/Downloads/PNG-cards-1.3/10_of_spades.png',
+
+// // '/Users/k-man/Downloads/PNG-cards-1.3/ace_of_clubs.png',
+// // '/Users/k-man/Downloads/PNG-cards-1.3/ace_of_diamonds.png',
+// // '/Users/k-man/Downloads/PNG-cards-1.3/ace_of_hearts.png',
+// // '/Users/k-man/Downloads/PNG-cards-1.3/ace_of_spades2.png',
+
+// // '/Users/k-man/Downloads/PNG-cards-1.3/jack_of_clubs2.png',
+// // '/Users/k-man/Downloads/PNG-cards-1.3/jack_of_diamonds2.png',
+// // '/Users/k-man/Downloads/PNG-cards-1.3/jack_of_hearts2.png',
+// // '/Users/k-man/Downloads/PNG-cards-1.3/jack_of_spades2.png',
+
+// // '/Users/k-man/Downloads/PNG-cards-1.3/king_of_clubs2.png',
+// // '/Users/k-man/Downloads/PNG-cards-1.3/king_of_diamonds2.png',
+// // '/Users/k-man/Downloads/PNG-cards-1.3/king_of_hearts2.png',
+// // '/Users/k-man/Downloads/PNG-cards-1.3/king_of_spades2.png',
+
+// // '/Users/k-man/Downloads/PNG-cards-1.3/queen_of_clubs2.png',
+// // '/Users/k-man/Downloads/PNG-cards-1.3/queen_of_diamonds2.png',
+// // '/Users/k-man/Downloads/PNG-cards-1.3/queen_of_hearts2.png',
+// // '/Users/k-man/Downloads/PNG-cards-1.3/queen_of_spades2.png', 
+// ]
+
 
 const cards = [
-   {id:1,
-      playerCard1: src='Cards/2_of_clubs.png',
-      
-      value: 2,
-       },
-   {id: 2,
-      playerCard1: src='Cards/2_of_diamonds.png',
-      
-      value: 2,
-   },
-   {id: 3,
-      playerCard1: src='Cards/2_of_hearts.png',
-      
-       value: 2,
-      },
-   
-   // '/Users/k-man/Downloads/PNG-cards-1.3/2_of_spades.png',
-   
-   // '/Users/k-man/Downloads/PNG-cards-1.3/3_of_clubs.png',
-   // '/Users/k-man/Downloads/PNG-cards-1.3/3_of_diamonds.png',
-   // '/Users/k-man/Downloads/PNG-cards-1.3/3_of_hearts.png',
-   // '/Users/k-man/Downloads/PNG-cards-1.3/3_of_spades.png',
-   
-   // '/Users/k-man/Downloads/PNG-cards-1.3/4_of_clubs.png',
-   // '/Users/k-man/Downloads/PNG-cards-1.3/4_of_diamonds.png',
-   // '/Users/k-man/Downloads/PNG-cards-1.3/4_of_hearts.png',
-   // '/Users/k-man/Downloads/PNG-cards-1.3/4_of_spades.png',
-   
-   // '/Users/k-man/Downloads/PNG-cards-1.3/5_of_clubs.png',
-   // '/Users/k-man/Downloads/PNG-cards-1.3/5_of_diamonds.png',
-   // '/Users/k-man/Downloads/PNG-cards-1.3/5_of_hearts.png',
-   // '/Users/k-man/Downloads/PNG-cards-1.3/5_of_spades.png',
-
-   // '/Users/k-man/Downloads/PNG-cards-1.3/6_of_clubs.png',
-   // '/Users/k-man/Downloads/PNG-cards-1.3/6_of_diamonds.png',
-   // '/Users/k-man/Downloads/PNG-cards-1.3/6_of_hearts.png',
-   // '/Users/k-man/Downloads/PNG-cards-1.3/6_of_spades.png',
-
-   // '/Users/k-man/Downloads/PNG-cards-1.3/7_of_clubs.png',
-   // '/Users/k-man/Downloads/PNG-cards-1.3/7_of_diamonds.png',
-   // '/Users/k-man/Downloads/PNG-cards-1.3/7_of_hearts.png',
-   // '/Users/k-man/Downloads/PNG-cards-1.3/7_of_spades.png',
-
-   // '/Users/k-man/Downloads/PNG-cards-1.3/8_of_clubs.png',
-   // '/Users/k-man/Downloads/PNG-cards-1.3/8_of_diamonds.png',
-   // '/Users/k-man/Downloads/PNG-cards-1.3/8_of_hearts.png',
-   // '/Users/k-man/Downloads/PNG-cards-1.3/8_of_spades.png',
-
-   // '/Users/k-man/Downloads/PNG-cards-1.3/9_of_clubs.png',
-   // '/Users/k-man/Downloads/PNG-cards-1.3/9_of_diamonds.png',
-   // '/Users/k-man/Downloads/PNG-cards-1.3/9_of_spades.png',
-   // '/Users/k-man/Downloads/PNG-cards-1.3/9_of_spades.png',
-
-   // '/Users/k-man/Downloads/PNG-cards-1.3/10_of_clubs.png',
-   // '/Users/k-man/Downloads/PNG-cards-1.3/10_of_diamonds.png',
-   // '/Users/k-man/Downloads/PNG-cards-1.3/10_of_hearts.png',
-   // '/Users/k-man/Downloads/PNG-cards-1.3/10_of_spades.png',
-
-   // '/Users/k-man/Downloads/PNG-cards-1.3/ace_of_clubs.png',
-   // '/Users/k-man/Downloads/PNG-cards-1.3/ace_of_diamonds.png',
-   // '/Users/k-man/Downloads/PNG-cards-1.3/ace_of_hearts.png',
-   // '/Users/k-man/Downloads/PNG-cards-1.3/ace_of_spades2.png',
-
-   // '/Users/k-man/Downloads/PNG-cards-1.3/jack_of_clubs2.png',
-   // '/Users/k-man/Downloads/PNG-cards-1.3/jack_of_diamonds2.png',
-   // '/Users/k-man/Downloads/PNG-cards-1.3/jack_of_hearts2.png',
-   // '/Users/k-man/Downloads/PNG-cards-1.3/jack_of_spades2.png',
-
-   // '/Users/k-man/Downloads/PNG-cards-1.3/king_of_clubs2.png',
-   // '/Users/k-man/Downloads/PNG-cards-1.3/king_of_diamonds2.png',
-   // '/Users/k-man/Downloads/PNG-cards-1.3/king_of_hearts2.png',
-   // '/Users/k-man/Downloads/PNG-cards-1.3/king_of_spades2.png',
-
-   // '/Users/k-man/Downloads/PNG-cards-1.3/queen_of_clubs2.png',
-   // '/Users/k-man/Downloads/PNG-cards-1.3/queen_of_diamonds2.png',
-   // '/Users/k-man/Downloads/PNG-cards-1.3/queen_of_hearts2.png',
-   // '/Users/k-man/Downloads/PNG-cards-1.3/queen_of_spades2.png', 
+   "A",2,3,4,5,6,7,8,9,10,"J","Q","K",
 ];
 
-const cards2 = [
-   {id:1,
-        
-      playerCard2: src='Cards/2_of_clubs.png',
-      value: 2,
-       },
-   {id: 2,
-      
-      playerCard2: src='Cards/2_of_diamonds.png',
-      value: 2,
-   },
-   {id: 3,
-      
-      playerCard2: src='Cards/2_of_hearts.png',
-       value: 2,
-      },
-];
+const suit = ["clubs", "diamond", "hearts", "spades"]
+
+const newPlayerCard = [
+   {cards:"A",
+   suit:"clubs",
+   img: src='Cards/2_of_clubs.png'},
+   
+   {cards:"A",
+   suit:"diamonds",
+   img: src='Cards/2_of_diamonds.png'},
+   
+   {cards:"A",
+   suit:"hearts",
+   img: src='Cards/2_of_hearts.png'},
+   
+   {cards:"A",
+   suit:"spades",
+   img: src='Cards/2_of_spades.png'},
+
+]
+
+
 const pCountDisplay = document.getElementById('Pcount');
 const dCountDisplay = document.getElementById('Dcount');
 const dealerCont = document.querySelector(".card-containerD");
 const playerCont = document.querySelector(".card-containerp");
-const playerCard1 = document.querySelector(".playerCard1");
-const playerCard2 = document.querySelector(".playerCard2");
+const img = document.querySelector(".playerCard");
+
+
 const hitBtn = document.querySelector('#hit');
 const stayBtn = document.querySelector('#stay');
 const dealBtn = document.querySelector('#deal');
@@ -839,68 +830,111 @@ const dealBtn = document.querySelector('#deal');
 
 
 let currentCard = 0;
-let currentCard2 = 0;
 let pCount = 0;
 let dCount = 0;
+let classCount = i = 0 ; i < 11 ; i++;
 
-// window.addEventListener('DOMContentLoaded', function (){
-//  showCard(currentCard);
-// });
+function getRandomCard() {
+    return Math.floor(Math.random() * cards.length) ;
+   
+  }
 
 
+
+
+
+  //deal button
 
 dealBtn.addEventListener('click', () => {
   
-   currentCard = Math.floor(Math.random() * cards.length);
-   currentCard2 = Math.floor(Math.random() * cards2.length);
-   
-   
-   function showCard(card) {
-      const item = cards[card];
-         playerCard1.src = item.playerCard1 ;
-         
-         // pCount.textContent = item.value;
-         // pCount++;
-         
-    };
+// currentCard = [getRandomCard()];
+    
 
-  function showCard2(card) {
-   const item = cards2[card];
-      playerCard2.src = item.playerCard2 ;
-      
-      // pCount.textContent = item.value;
-      // pCount++;
-      
- };
+
+
+
+
+
+//    function showCard(card) {
+//       const item = deck[card];
+//         playerCard.src = item.playerCard ;
+//        };
+
+
   
- showCard(currentCard);
- showCard2(currentCard2);
-   
-   
-   
-  
-   
+//  showCard(currentCard);
+
 });
 
 
- hitBtn.addEventListener('click', (e) => {
+
+
+
+// hit button
+ hitBtn.addEventListener('click', () => {
    
+   
+   currentCard = [getRandomCard()];
 
-  
-   for(let classChange = i = 0 ; i < 1 ; i++ ){
-     e.forEach(() => {
-      
-      
+   function npcFunc() {
       const newPlayerCard = document.createElement('img');
-      newPlayerCard.classList.add(`'playerCard${classChange}'`);
+      newPlayerCard.classList.add(`playerCard${classCount++}`);
       playerCont.appendChild(newPlayerCard);
-
-     });
-      
       
      
-   }}
-);
+   };
+   
+   
+      npcFunc(currentCard);
+   
+   
+     function showCard(card) {
+      const item = newPlayerCard[card];
+        cards.textContent = item.cards;
+        suit.textContent = item.suit;
+        img.src = item.img;
+       
+      
+       };
+
+     
+       showCard(currentCard);
+ 
+
+
+      // switch(cards,suit){
+      //    case "A","clubs": playerCard.display.src="Cards/ace_of_clubs.png"
+      //    break;
+         
+      //    case "A","diamonds": playerCard.display.src="Cards/ace_of_diamonds.png"
+      //    break;
+         
+      //    case "A","hearts": playerCard.display.src="Cards/ace_of_hearts.png"
+      //    break;
+         
+      //    case "A","spades": playerCard.display.src="Cards/ace_of_spades2.png.png"
+      //    break;
+      //    }
+  
+    });
+ 
+
+
+  
+
+
+ 
+
+   
+
+       
+        
+
+      
+      
+ 
+    
+
    
 
  
