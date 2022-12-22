@@ -601,3 +601,47 @@ background-color: blue;
 
 }
 
+/* Expense Tracker*/
+
+.grid {
+
+  display: grid;
+  grid-template-columns:  1fr 1fr 1fr  ;
+  
+ 
+
+}
+
+
+
+.span1, .span2, .span3 {
+grid-column: span 1;
+}
+
+
+
+h4, h6 {
+  border: 2px solid white;
+  padding: 20px;
+}
+
+h1, h2, h3  {
+  padding: 20px ;
+}
+
+table, td {
+  border: 1px solid white;
+  
+}
+
+td {
+  width: 200px;
+}
+
+tr {
+  width: 100px;
+}
+
+#my-Table {
+  
+}

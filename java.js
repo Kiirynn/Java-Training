@@ -794,33 +794,39 @@ const cards = [
    "A",2,3,4,5,6,7,8,9,10,"J","Q","K",
 ];
 
+
+
 const suit = ["clubs", "diamond", "hearts", "spades"]
 
 const newPlayerCard = [
    {cards:"A",
+   value: 1,
    suit:"clubs",
    img: src='Cards/2_of_clubs.png'},
    
    {cards:"A",
+   value: 1,
    suit:"diamonds",
    img: src='Cards/2_of_diamonds.png'},
    
    {cards:"A",
+   value: 1,
    suit:"hearts",
    img: src='Cards/2_of_hearts.png'},
    
    {cards:"A",
+   value: 1,
    suit:"spades",
    img: src='Cards/2_of_spades.png'},
 
 ]
 
-
+let classCount = i = 0 ; i < 11 ; i++;
 const pCountDisplay = document.getElementById('Pcount');
 const dCountDisplay = document.getElementById('Dcount');
 const dealerCont = document.querySelector(".card-containerD");
 const playerCont = document.querySelector(".card-containerp");
-const img = document.querySelector(".playerCard");
+const img = document.querySelector(`playerCard${classCount++}`);
 
 
 const hitBtn = document.querySelector('#hit');
@@ -832,7 +838,7 @@ const dealBtn = document.querySelector('#deal');
 let currentCard = 0;
 let pCount = 0;
 let dCount = 0;
-let classCount = i = 0 ; i < 11 ; i++;
+
 
 function getRandomCard() {
     return Math.floor(Math.random() * cards.length) ;
@@ -889,17 +895,18 @@ dealBtn.addEventListener('click', () => {
    
    
      function showCard(card) {
-      const item = newPlayerCard[card];
-        cards.textContent = item.cards;
-        suit.textContent = item.suit;
-        img.src = item.img;
-       
-      
-       };
+       const item = newPlayerCard[card];
+         
+           cards.textContent = item.cards;
+           suit.textContent = item.suit;
+           img.src = item.img;
+          
+        };
 
      
        showCard(currentCard);
- 
+       
+      
 
 
       // switch(cards,suit){
@@ -1018,30 +1025,55 @@ dealBtn.addEventListener('click', () => {
 //    info.textContent = item.text;
 // }
 
-// // show next person 
 
-// forBtn.addEventListener('click', function () {
-//     currentItem++;
-//        if(currentItem > reviews.length -1){
-//         currentItem = 0;
-//      }
-//     showPerson(currentItem);
-// });
 
-// //prev person
-// prevBtn.addEventListener('click', function () {
-//     currentItem--;
-//        if(currentItem < 0) {
-//          currentItem = reviews.length - 1;
-//        } 
-//     showPerson(currentItem);
-// });
 
-// // carry on trying to figure out how to make random button work
 
-// ranBtn.addEventListener('click', function() {
-//     currentItem = Math.floor(Math.random() * reviews.length);
-    
 
-//       showPerson(currentItem);
-// });
+
+// Expense Tracker
+const grid = document.querySelector('.grid');
+const nameBar = document.getElementById('name');
+const dateBar = document.getElementById('date');
+const amountBar = document.getElementById('amount');
+const addBtn = document.querySelector('#Add');
+const nameOutcome = document.querySelector('#name-outcome');
+const dateOutcome = document.querySelector('#date-outcome');
+const priceOutcome = document.querySelector('#price-outcome');
+let classCount1 = i = 0 ; i < 11 ; i++;
+
+
+
+
+
+// nameBar.innerText;
+// dateOutcome.textContent = dateBar.textContent ;
+// priceOutcome.textContent = amountBar.textContent;
+
+
+function myFunction() {
+  var table = document.getElementById("myTable");
+  var row = table.insertRow(1);
+  var cell1 = row.insertCell(0);
+  var cell2 = row.insertCell(0);
+  var cell3 = row.insertCell(0);
+  
+  const removeBtn = document.createElement('button');
+  removeBtn.innerHTML = "X" ;
+  row.appendChild(removeBtn);
+  
+  
+    removeBtn.addEventListener('click', () => {
+      cell3.innerHTML = nameBar.value = "";
+      cell2.innerHTML = dateBar.value = "";
+      cell1.innerHTML = amountBar.value = "";
+      row.remove(1);
+      
+});
+
+
+cell3.innerHTML = nameBar.value;
+cell2.innerHTML = dateBar.value;
+cell1.innerHTML = amountBar.value;
+};
+
