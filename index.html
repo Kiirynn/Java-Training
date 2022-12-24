@@ -295,23 +295,40 @@
       <td>Date</td>
       <td>Amount</td>
     </tr>
-    
-
-    
-   
-  
-
-    
-       
-  
   </table>
+  <h4>Total:<span id="total"></span></h4>
   <br>
   
-  <button type="button" onclick="myFunction()">Try it</button>
+  <button type="button" onclick="myFunction()">ADD</button>
   
+</div>
+
+
+<!-- note taker -->
+
+
+
+<div class="note-container">
+  <h1>Note Taker</h1>
+  <h4>Add New Note:</h4>
+  <h5>Note: <input id="noteBar" type="text"></h5>
+  <button id="add-note">Add Note</button>
+
+  <div class="notes">
 
 
   </div>
+
+  <div class="overlay">
+    <div class="info">
+      <div class="close" id="claseOverlay">
+        <button class="closeBtn">X</button>
+
+      </div>
+    </div>
+  </div>
+</div>
+
     
    <footer>
     <button id="top">Scroll To Top</button>

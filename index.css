@@ -645,3 +645,32 @@ tr {
 #my-Table {
   
 }
+
+
+
+
+/* note tracker */
+
+.note-container {
+  border: 2px solid white;
+}
+
+
+.note {
+  border: 2px solid white;
+  width: 300px;
+  height: 175px;
+  margin: 10px;
+}
+
+
+
+
+.notes{
+
+display: flex;
+justify-content:center;
+align-items: center;
+
+
+}

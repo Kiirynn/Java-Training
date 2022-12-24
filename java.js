@@ -1031,6 +1031,13 @@ dealBtn.addEventListener('click', () => {
 
 
 
+
+
+
+
+
+
+
 // Expense Tracker
 const grid = document.querySelector('.grid');
 const nameBar = document.getElementById('name');
@@ -1040,40 +1047,110 @@ const addBtn = document.querySelector('#Add');
 const nameOutcome = document.querySelector('#name-outcome');
 const dateOutcome = document.querySelector('#date-outcome');
 const priceOutcome = document.querySelector('#price-outcome');
+// const sum = document.getElementById('total');
 let classCount1 = i = 0 ; i < 11 ; i++;
 
 
 
 
 
-// nameBar.innerText;
-// dateOutcome.textContent = dateBar.textContent ;
-// priceOutcome.textContent = amountBar.textContent;
-
-
 function myFunction() {
   var table = document.getElementById("myTable");
-  var row = table.insertRow(1);
-  var cell1 = row.insertCell(0);
-  var cell2 = row.insertCell(0);
-  var cell3 = row.insertCell(0);
+   
+     function updateSubTotal() {
   
-  const removeBtn = document.createElement('button');
-  removeBtn.innerHTML = "X" ;
-  row.appendChild(removeBtn);
+       let subTotal = Array.from(table.rows).slice(1).reduce((total, row) => {
+          return total + parseFloat(row.cells[2].innerHTML);
+        }, 0);
+          document.getElementById("total").innerHTML = "$" + subTotal.toFixed(2);
+      }
+            updateSubTotal();
+           
+           var row = table.insertRow(1);
+           var cell1 = row.insertCell(0);
+           var cell2 = row.insertCell(0);
+           var cell3 = row.insertCell(0);
+ 
+    const removeBtn = document.createElement('button');
+       removeBtn.innerHTML = "X" ;
+          row.appendChild(removeBtn);
   
   
     removeBtn.addEventListener('click', () => {
+      let sum = document.getElementById("total");
       cell3.innerHTML = nameBar.value = "";
       cell2.innerHTML = dateBar.value = "";
       cell1.innerHTML = amountBar.value = "";
       row.remove(1);
       
+
+
+    
 });
 
+       cell3.innerHTML = nameBar.value;
+       cell2.innerHTML = dateBar.value;
+       cell1.innerHTML = amountBar.value;
 
-cell3.innerHTML = nameBar.value;
-cell2.innerHTML = dateBar.value;
-cell1.innerHTML = amountBar.value;
+       
+
+
 };
+
+
+
+// note taker
+
+const addNoteBtn = document.querySelector('#add-note');
+const noteBar = document.querySelector('#noteBar');
+const notes = document.querySelector('.notes');
+
+let classCount2 = i = 0 ; i < 11 ; i++;
+
+addNoteBtn.addEventListener('click', () =>{
+   
+   function createNote() {
+
+      document.addEventListener('DOMContentLoaded', () => {
+         
+         const closeBtn = document.querySelector('.closeBtn');
+         const overlay = document.querySelector('.overlay');
+         const noteBtn = document.createElement('button');
+
+         noteBtn.addEventListener('click', () => {
+            overlay.style.display = 'block';
+            noteP.textContent;
+       });
+ 
+       closeBtn.addEventListener('click', () => {
+          overlay.style.display = 'none';
+       })
+      });
+      
+
+     
+      const noteHeader = document.createElement('h5');
+      const noteP = document.createElement('p');
+      const note = document.createElement('div');
+      note.classList.add('note');
+      note.classList.add(`${classCount2++}`);
+      noteBtn.innerHTML = "View Detail";
+
+ 
+     
+      
+      
+      noteHeader.innerHTML = `Note ${classCount2++}`;
+      note.appendChild(noteHeader);
+      note.appendChild(noteP);
+      note.appendChild(noteBtn);
+      notes.appendChild(note);
+      
+
+      noteP.textContent = noteBar.value;
+     
+   };
+   createNote() ;
+
+})
 
