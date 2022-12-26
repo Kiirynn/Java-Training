@@ -1104,53 +1104,91 @@ function myFunction() {
 const addNoteBtn = document.querySelector('#add-note');
 const noteBar = document.querySelector('#noteBar');
 const notes = document.querySelector('.notes');
+const closeBtn = document.querySelector('.closeBtn');
+const info = document.querySelector('.info');
 
+const ovOff = document.querySelector('.overlay').style.display = 'none';
 let classCount2 = i = 0 ; i < 11 ; i++;
 
+
+function turnOverLayOn() {
+   document.querySelector('.overlay').style.display = 'none';
+   
+}
+
+turnOverLayOn();
+
+
+
 addNoteBtn.addEventListener('click', () =>{
+
+   
    
    function createNote() {
 
-      document.addEventListener('DOMContentLoaded', () => {
-         
-         const closeBtn = document.querySelector('.closeBtn');
-         const overlay = document.querySelector('.overlay');
-         const noteBtn = document.createElement('button');
-
-         noteBtn.addEventListener('click', () => {
-            overlay.style.display = 'block';
-            noteP.textContent;
-       });
- 
-       closeBtn.addEventListener('click', () => {
-          overlay.style.display = 'none';
-       })
-      });
-      
-
      
+      
+    
+    
+      const noteBtn = document.createElement('button');
+      const noteBtnX = document.createElement('button');
       const noteHeader = document.createElement('h5');
       const noteP = document.createElement('p');
       const note = document.createElement('div');
       note.classList.add('note');
       note.classList.add(`${classCount2++}`);
       noteBtn.innerHTML = "View Detail";
+      noteBtnX.innerHTML = "X";
 
+
+      noteBtnX.addEventListener('click', () =>  {
+   
+      
+    
+         document.querySelector('.note').style.display = 'none';
+     
+           
+      
+       
+      });
  
      
       
       
-      noteHeader.innerHTML = `Note ${classCount2++}`;
+      noteHeader.innerHTML = `Note ${classCount++}`;
       note.appendChild(noteHeader);
       note.appendChild(noteP);
       note.appendChild(noteBtn);
+      note.appendChild(noteBtnX);
       notes.appendChild(note);
+     
+
       
 
       noteP.textContent = noteBar.value;
+      
+      noteBtn.addEventListener('click', () => {
+         function turnOverLayOn() {
+            document.querySelector('.overlay').style.display = 'block';
+            info.appendChild(noteP);
+         }
+   
+         turnOverLayOn();
+    
+
+      });
+
+    
+   
      
    };
+
+   
    createNote() ;
 
-})
+   
+
+});
+
+
 

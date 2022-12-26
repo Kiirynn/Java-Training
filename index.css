@@ -672,5 +672,32 @@ display: flex;
 justify-content:center;
 align-items: center;
 
+}
 
+.overlay {
+  border-radius: 10px;
+  width: 25%;
+  height: 25%;
+  background-color: black;
+  position: fixed;
+  top:0;
+  left:0;
+  bottom: 0;
+  cursor: pointer;
+  z-index: 2;
+  transition: ease-in 0.5s;
+  opacity: 0.9;
+}
+
+.info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #ffffff;
+  font-size: 1.5rem;
+
+}
+
+.closeBtn {
+  float: right;
 }
