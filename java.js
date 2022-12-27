@@ -1104,7 +1104,7 @@ function myFunction() {
 const addNoteBtn = document.querySelector('#add-note');
 const noteBar = document.querySelector('#noteBar');
 const notes = document.querySelector('.notes');
-const closeBtn = document.querySelector('.closeBtn');
+const closeBtn = document.querySelector('.closeBtn')
 const info = document.querySelector('.info');
 
 const ovOff = document.querySelector('.overlay').style.display = 'none';
@@ -1129,7 +1129,7 @@ addNoteBtn.addEventListener('click', () =>{
      
       
     
-    
+    let i = 0;
       const noteBtn = document.createElement('button');
       const noteBtnX = document.createElement('button');
       const noteHeader = document.createElement('h5');
@@ -1139,21 +1139,9 @@ addNoteBtn.addEventListener('click', () =>{
       note.classList.add(`${classCount2++}`);
       noteBtn.innerHTML = "View Detail";
       noteBtnX.innerHTML = "X";
+      noteBtnX.classList.add('noteBtnX');
+      
 
-
-      noteBtnX.addEventListener('click', () =>  {
-   
-      
-    
-         document.querySelector('.note').style.display = 'none';
-     
-           
-      
-       
-      });
- 
-     
-      
       
       noteHeader.innerHTML = `Note ${classCount++}`;
       note.appendChild(noteHeader);
@@ -1162,7 +1150,19 @@ addNoteBtn.addEventListener('click', () =>{
       note.appendChild(noteBtnX);
       notes.appendChild(note);
      
+      document.body.appendChild(notes);
+      document.querySelector('.noteBtnX' + i)
+        
+       noteBtnX.addEventListener('click', () =>  {
+         
+       
+         notes.removeChild(note);
 
+
+       // document.querySelector('.note').style.display = 'none';
+    });
+ 
+   i++;
       
 
       noteP.textContent = noteBar.value;
