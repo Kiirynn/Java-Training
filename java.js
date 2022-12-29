@@ -1097,6 +1097,61 @@ function myFunction() {
 
 };
 
+//  vowel counter
+// a, e, i, o, u
+
+const displayMessage = document.getElementById('dMessage')
+const checkBtn = document.querySelector('#checkBtn');
+const textBar = document.querySelector('#counterInput');
+let counter1 = 0 ;
+
+function removeAfterSetTime() {
+   location.reload()
+}
+   checkBtn.addEventListener('click', () => {
+      let input = document.getElementById('counterInput').value.toLowerCase();
+      let split = input.split('');
+      textBar.value = ""
+
+
+
+      for(let i = 0; i < split.length ; i++)
+          if(split[i] == 'a' || split[i] == 'e' || split[i] == 'i'|| split[i] == 'o' || split[i] == 'u'){
+             counter1++
+      }
+      if(counter1 > 1){
+         displayMessage.innerHTML = `input has ${counter1} vowels`
+         let gg = displayMessage.innerHTML;
+        
+           alert(gg);
+      }
+
+      else {
+         displayMessage.innerHTML = `input has ${counter1} vowels`
+      }
+    // this variable will reload page in 2.5 seconds(2500 milliseconds)
+      // let timeout = setTimeout(removeAfterSetTime, 2500)
+   })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 // note taker
@@ -1106,6 +1161,7 @@ const noteBar = document.querySelector('#noteBar');
 const notes = document.querySelector('.notes');
 const closeBtn = document.querySelector('.closeBtn')
 const info = document.querySelector('.info');
+// const noteContainer = document.querySelector('.note-container');
 
 const ovOff = document.querySelector('.overlay').style.display = 'none';
 let classCount2 = i = 0 ; i < 11 ; i++;
@@ -1144,6 +1200,7 @@ addNoteBtn.addEventListener('click', () =>{
 
       
       noteHeader.innerHTML = `Note ${classCount++}`;
+      // noteContainer.appendChild(notes);
       note.appendChild(noteHeader);
       note.appendChild(noteP);
       note.appendChild(noteBtn);
@@ -1168,7 +1225,9 @@ addNoteBtn.addEventListener('click', () =>{
       noteP.textContent = noteBar.value;
       
       noteBtn.addEventListener('click', () => {
+         
          function turnOverLayOn() {
+            // overlay.classList.toggle('hidden')
             document.querySelector('.overlay').style.display = 'block';
             info.appendChild(noteP);
          }
@@ -1189,6 +1248,14 @@ addNoteBtn.addEventListener('click', () =>{
    
 
 });
+
+
+
+
+
+
+
+
 
 
 
