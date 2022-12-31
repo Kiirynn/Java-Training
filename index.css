@@ -706,3 +706,20 @@ border: 2px solid white;
 .closeBtn {
   float: right;
 }
+
+
+
+
+/* memory game css */
+
+.mem-card-container1, .mem-card-container2{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+#mem-photo {
+  width: 300px;
+  height: 300px;
+}

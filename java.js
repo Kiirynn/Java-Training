@@ -1097,8 +1097,8 @@ function myFunction() {
 
 };
 
-//  vowel counter
-// a, e, i, o, u
+// //  vowel counter
+// // a, e, i, o, u
 
 const displayMessage = document.getElementById('dMessage')
 const checkBtn = document.querySelector('#checkBtn');
@@ -1108,6 +1108,8 @@ let counter1 = 0 ;
 function removeAfterSetTime() {
    location.reload()
 }
+
+
    checkBtn.addEventListener('click', () => {
       let input = document.getElementById('counterInput').value.toLowerCase();
       let split = input.split('');
@@ -1128,21 +1130,117 @@ function removeAfterSetTime() {
 
       else {
          displayMessage.innerHTML = `input has ${counter1} vowels`
+         let gg2 = displayMessage.innerHTML ;
+         
+         alert(gg2);
       }
-    // this variable will reload page in 2.5 seconds(2500 milliseconds)
-      // let timeout = setTimeout(removeAfterSetTime, 2500)
+   
    })
 
 
 
 
 
+   // memory game
 
 
+const memImg = [
+   
+   {  id: 1,
+      imgPhoto: src='Content/profile pic 2 spotift:apple.jpg'},
+   
+   {  id: 2,
+      imgPhoto: src='Content/ETERNITY COVER FINAL EP2.jpeg'},
+   
+   {  id: 3,
+      imgPhoto: src='Content/IG FACE PHOTO.jpeg'},
+   
+   {  id: 4,
+      imgPhoto: src='Content/kii 3 flippped.jpeg'},
+   
+   {  id: 5,
+      imgPhoto: src='Content/kii 4_11zon.jpeg'},
+   
+   {  id: 6,
+      imgPhoto: src='Content/ETERNITY COVER FINAL EP2.jpeg'},
+   
+   ]
+
+let currentDiv = 0;
+let currentMemCard = 0;
+
+const playGame = document.querySelector('#play-memGame')
+const mainCont = document.querySelector('.mem-card-main-container')
+
+// const memCard = Array.from(document.querySelector('.card'));
+const memCard = 
+
+`<div class="mem-card-container1">
+ 
+<div class="card x 1">
+<img id="mem-photo" src="" alt="">
+</div>
+
+<div class="card x 2">
+<img id="mem-photo" src="" alt="">
+</div>
+
+<div class="card x 3">
+<img id="mem-photo"  src="" alt="">
+</div>
+</div>
+
+<div class="mem-card-container2">
+
+<div class="card x 4">
+<img id="mem-photo"  src="" alt="">
+</div>
+
+<div class="card x 5">
+<img id="mem-photo" src="" alt="">
+</div>
+
+<div class="card x 6">
+<img id="mem-photo"  src="" alt="">
+</div>
+
+</div>`;
 
 
+playGame.addEventListener('click', () =>{
+   mainCont.insertAdjacentHTML('beforeBegin', memCard)
+     const divCard = document.querySelector('.card')
+     const imgPhoto = document.getElementById('mem-photo');
 
-
+   divCard.addEventListener('click', () => {
+      const divX = document.querySelector('.x');
+      currentMemCard = [getRandomCard()];
+      
+            
+           
+      
+      function showMemCard(card) {
+               
+               const item = memImg[card];
+                imgPhoto.src = item.imgPhoto;
+                  
+               };
+               
+                  showMemCard(currentMemCard);
+            
+               })
+   
+               
+               
+               
+               function getRandomCard() {
+                  return Math.floor(Math.random() * memImg.length) ;
+               
+               }
+   
+          
+            
+})
 
 
 
