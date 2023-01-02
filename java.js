@@ -1143,104 +1143,117 @@ function removeAfterSetTime() {
 
    // memory game
 
+   const memImg = [
+   
+      {  id: 1,
+         imgPhoto: src='Content/profile pic 2 spotift:apple.jpg'},
+      
+      {  id: 2,
+         imgPhoto: src='Content/ETERNITY COVER FINAL EP2.jpeg'},
+      
+      {  id: 3,
+         imgPhoto: src='Content/IG FACE PHOTO.jpeg'},
+      
+      {  id: 4,
+         imgPhoto: src='Content/kii 3 flippped.jpeg'},
+      
+      {  id: 5,
+         imgPhoto: src='Content/kii 4_11zon.jpeg'},
+      
+      {  id: 6,
+         imgPhoto: src='Content/ETERNITY COVER FINAL EP2.jpeg'},
+      
+      ];
 
-const memImg = [
-   
-   {  id: 1,
-      imgPhoto: src='Content/profile pic 2 spotift:apple.jpg'},
-   
-   {  id: 2,
-      imgPhoto: src='Content/ETERNITY COVER FINAL EP2.jpeg'},
-   
-   {  id: 3,
-      imgPhoto: src='Content/IG FACE PHOTO.jpeg'},
-   
-   {  id: 4,
-      imgPhoto: src='Content/kii 3 flippped.jpeg'},
-   
-   {  id: 5,
-      imgPhoto: src='Content/kii 4_11zon.jpeg'},
-   
-   {  id: 6,
-      imgPhoto: src='Content/ETERNITY COVER FINAL EP2.jpeg'},
-   
-   ]
+
 
 let currentDiv = 0;
 let currentMemCard = 0;
 
-const playGame = document.querySelector('#play-memGame')
-const mainCont = document.querySelector('.mem-card-main-container')
 
-// const memCard = Array.from(document.querySelector('.card'));
+const playGame = document.querySelector('#play-memGame');
+const mainCont = document.querySelector('.mem-card-main-container');
+
+
+
 const memCard = 
 
 `<div class="mem-card-container1">
- 
-<div class="card x 1">
+
+<div  class="card">
 <img id="mem-photo" src="" alt="">
 </div>
 
-<div class="card x 2">
+<div class="card">
 <img id="mem-photo" src="" alt="">
 </div>
 
-<div class="card x 3">
+<div class="card">
 <img id="mem-photo"  src="" alt="">
 </div>
 </div>
 
 <div class="mem-card-container2">
 
-<div class="card x 4">
+<div class="card">
 <img id="mem-photo"  src="" alt="">
 </div>
 
-<div class="card x 5">
+<div class="card">
 <img id="mem-photo" src="" alt="">
 </div>
 
-<div class="card x 6">
+<div class="card">
 <img id="mem-photo"  src="" alt="">
 </div>
 
 </div>`;
 
 
-playGame.addEventListener('click', () =>{
-   mainCont.insertAdjacentHTML('beforeBegin', memCard)
-     const divCard = document.querySelector('.card')
-     const imgPhoto = document.getElementById('mem-photo');
 
-   divCard.addEventListener('click', () => {
-      const divX = document.querySelector('.x');
-      currentMemCard = [getRandomCard()];
-      
-            
-           
-      
-      function showMemCard(card) {
-               
-               const item = memImg[card];
-                imgPhoto.src = item.imgPhoto;
-                  
-               };
-               
-                  showMemCard(currentMemCard);
-            
-               })
+
+    playGame.addEventListener('click', () => {
+         mainCont.insertAdjacentHTML('beforeBegin', memCard);
+         const imgPhoto = document.querySelectorAll('#mem-photo');
+         
    
-               
-               
-               
-               function getRandomCard() {
-                  return Math.floor(Math.random() * memImg.length) ;
-               
-               }
+              
+                 document.querySelectorAll('.card').forEach(div =>
+                     div.addEventListener('click', () => {
+                        
+                        function showMemCard(card) {
+                                                   
+                           const item = memImg[card];
+                           imgPhoto.src = item.imgPhoto;
+                              
+                           };
+                        
+                              showMemCard(currentMemCard);
+                     }));
    
-          
+     
+   
+   
+   // divCard.addEventListener('click', () => {
+   //    currentMemCard = [getRandomCard()];
+      
+   
+   
+      
+                           
+    
             
+   //             })
+
+ 
+
+
 })
+
+
+
+
+
 
 
 
