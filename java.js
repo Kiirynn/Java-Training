@@ -1167,91 +1167,141 @@ function removeAfterSetTime() {
 
 
 
+
+
+
+// inner HTMl 
+
+
+
+// const memCard = 
+// `<div class="mem-card-container1">
+
+// <div class="card">
+// <img id="mem-photo" src="" alt="">
+// </div>
+
+// <div class="card">
+// <img id="mem-photo" src="" alt="">
+// </div>
+
+// <div class="card">
+// <img id="mem-photo"  src="" alt="">
+// </div>
+// </div>
+
+// <div class="mem-card-container2">
+
+// <div class="card">
+// <img id="mem-photo"  src="" alt="">
+// </div>
+
+// <div class="card">
+// <img id="mem-photo" src="" alt="">
+// </div>
+
+// <div class="card">
+// <img id="mem-photo"  src="" alt="">
+// </div>
+
+// </div>`;
+
+
+
+//     playGame.addEventListener('click', () => {
+//          mainCont.insertAdjacentHTML('beforebegin', memCard);
+//               const imgPhoto = document.querySelectorAll('#mem-photo');
+//               const divCard  = document.querySelectorAll('.card');
+// document.querySelectorAll('.card').forEach((div) =>
+// div.addEventListener('click', () => {
+//   })
+
 let currentDiv = 0;
 let currentMemCard = 0;
+
 
 
 const playGame = document.querySelector('#play-memGame');
 const mainCont = document.querySelector('.mem-card-main-container');
 
+const imgPhoto = document.querySelector('#mem-photo');
+const imgPhoto2 = document.querySelector('#mem-photo2');
+const divCard  = document.querySelectorAll('.card');
+const front = document.getElementById('front');
+
+// imgPhoto.style.display = "none";
 
 
-const memCard = 
-
-`<div class="mem-card-container1">
-
-<div  class="card">
-<img id="mem-photo" src="" alt="">
-</div>
-
-<div class="card">
-<img id="mem-photo" src="" alt="">
-</div>
-
-<div class="card">
-<img id="mem-photo"  src="" alt="">
-</div>
-</div>
-
-<div class="mem-card-container2">
-
-<div class="card">
-<img id="mem-photo"  src="" alt="">
-</div>
-
-<div class="card">
-<img id="mem-photo" src="" alt="">
-</div>
-
-<div class="card">
-<img id="mem-photo"  src="" alt="">
-</div>
-
-</div>`;
-
-
-
-
-    playGame.addEventListener('click', () => {
-         mainCont.insertAdjacentHTML('beforeBegin', memCard);
-         const imgPhoto = document.querySelectorAll('#mem-photo');
-         
+// function showMemCard(card) {
    
-              
-                 document.querySelectorAll('.card').forEach(div =>
-                     div.addEventListener('click', () => {
-                        
-                        function showMemCard(card) {
-                                                   
-                           const item = memImg[card];
-                           imgPhoto.src = item.imgPhoto;
-                              
-                           };
-                        
-                              showMemCard(currentMemCard);
-                     }));
-   
-     
-   
-   
-   // divCard.addEventListener('click', () => {
-   //    currentMemCard = [getRandomCard()];
+//    imgPhoto.style.display = 'block';
+//    front.style.display = "none";
+//    currentMemCard = [getRandomCard()];
+//    const item = memImg[card];
+//    imgPhoto.src = item.imgPhoto;
       
-   
-   
-      
-                           
+//    };
+
+//       showMemCard(currentMemCard);
+
+let hasFlippedCard = false;
+let firstCard, secondCard;
+
+function flipCard() {
+   this.classList.toggle('flip');
     
-            
-   //             })
+   if(!hasFlippedCard){
+       hasFlippedCard = true;
+       firstCard = this;
+   }
 
+   else {
+      hasFlippedCard = false;
+      secondCard = this;
+   }
+
+   if(firstCard.dataset.framework === secondCard.dataset.framework){
+         firstCard.removeEventListener('click', flipCard)
+         secondCard.removeEventListener('click', flipCard)
+   }
+   else {
+      setTimeout(() => {
+         firstCard.classList.remove('flip')
+         secondCard.classList.remove('flip')
+      }, 1500);
+     
+   }
+  
+}
+
+
+divCard.forEach(card => card.addEventListener('click', flipCard));
+  
+   
+
+         
+  
+
+
+
+
+
+
+
+
+
+  
+         
+    
+
+
+
+
+
+function getRandomCard(){
+   return  Math.floor(Math.random() * memImg.length);
+ };
  
-
-
-})
-
-
-
 
 
 
