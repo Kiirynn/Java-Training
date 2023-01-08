@@ -1235,7 +1235,8 @@ let currentDiv = 0;
 let currentMemCard = 0;
 
 const shuffleBtn = document.querySelector('#play-memGame');
-const mainCont = document.querySelector('.mem-card-main-container');
+const mainCont = document.querySelector('.mem-card-container-main');
+const comm = document.getElementById('comm');
 
 const imgPhoto = document.querySelector('#mem-photo');
 const imgPhoto2 = document.querySelector('#mem-photo2');
@@ -1271,9 +1272,7 @@ function flipCard() {
   
       
       secondCard = this;
-
-
-     checkForMatch();
+      checkForMatch();
   
   }
 
@@ -1284,11 +1283,27 @@ function flipCard() {
   function checkForMatch() {
    let isMatch = firstCard.dataset.framework === secondCard.dataset.framework;
 
-   isMatch ? disableCards() : unFlipCards();
+   // isMatch ? disableCards() : unFlipCards();
    isMatch ? scoreCount++ : failedAttempts++
 
    score.innerHTML = scoreCount;
    failed.innerHTML = failedAttempts;
+
+ if(isMatch){
+    comm.innerHTML = "YOU WIN!!!!!!"
+    unFlipCards();
+     setTimeout(() => {
+       shuffle();
+  
+      }, 600)
+    
+  
+ }
+ else{
+   unFlipCards()
+   comm.innerHTML = "YOU SUCK"
+ }
+
 
  console.log(scoreCount);
  console.log(failedAttempts)
@@ -1327,12 +1342,12 @@ function flipCard() {
   }
 
 
-(function shuffle(){
+function shuffle(){
    divCard.forEach(card =>{
       let randomPos =  Math.floor(Math.random() * 12);
       card.style.order = randomPos;
    });
-  })();
+  };
 
 
 
@@ -1346,14 +1361,8 @@ divCard.forEach(card => card.addEventListener('click', flipCard));
 
 
 shuffleBtn.addEventListener('click', () => {
-   
- hasFlippedCard = false;
- firstCard, secondCard;
- lockBoard = false;
- scoreCount = 0;
- failedAttempts = 0;
+ location.reload(mainCont);
 
- 
 })
          
   
