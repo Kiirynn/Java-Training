@@ -1269,7 +1269,7 @@ function flipCard() {
        return;
    }
 
-  
+ 
       
       secondCard = this;
       checkForMatch();
@@ -1295,7 +1295,7 @@ function flipCard() {
      setTimeout(() => {
        shuffle();
   
-      }, 600)
+      }, 1000)
     
   
  }
@@ -1305,8 +1305,7 @@ function flipCard() {
  }
 
 
- console.log(scoreCount);
- console.log(failedAttempts)
+ 
 }
 
 
@@ -1364,8 +1363,44 @@ shuffleBtn.addEventListener('click', () => {
  location.reload(mainCont);
 
 })
+
+
+
+
+
+
+
+
+
+
+
+// clock
+
+
+const hourHand = document.querySelector('.hour-hand');
+const minuteHand = document.querySelector('.minute-hand');
+const secHand = document.querySelector('.second-hand');
+
+
+setInterval(setClock, 1000)
+     
+function setClock() {
+   const currentDate = new Date()
+   const secondRatio = currentDate.getSeconds() / 60
+   const minuteRatio = (secondRatio + currentDate.getMinutes()) / 60
+   const hourRatio = (minuteRatio + currentDate.getHours()) / 12
+   setRotation(secHand, secondRatio);
+   setRotation(minuteHand, minuteRatio);
+   setRotation(hourHand, hourRatio);
+   
+;}
+
+function setRotation(element, rotationRatio) {
+      element.style.setProperty('--rotation', rotationRatio * 360)
+
+}
          
-  
+setClock();  
 
 
 
@@ -1479,6 +1514,7 @@ addNoteBtn.addEventListener('click', () =>{
    
 
 });
+
 
 
 

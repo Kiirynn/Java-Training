@@ -651,8 +651,13 @@ tr {
 
 /* note tracker */
 
+.note-game {
+  padding: 200px;
+}
+
 .note-container {
   border: 2px solid white;
+  
 }
 
 
@@ -768,3 +773,127 @@ border: 2px solid white;
 transform: rotateY(180deg);
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+/* clock */
+
+.main-clock {
+  padding: 25px;
+  
+}
+
+.clock-shape {
+ 
+  background-color: rgba(0, 0, 0, 0.7);
+  
+  width: 400px;
+  height: 450px;
+  border-radius: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  
+
+}
+
+.circle {
+  
+  background-color: white;
+  width: 20px;
+  height: 20px;
+  border-radius: 5px;
+  position: absolute;
+}
+
+.hour-hand {
+  --rotation: 0;
+  background-color: white;
+  width: 10px;
+  height: 150px;
+  position: absolute;
+  bottom: 50%;
+  transform-origin: bottom;
+  transform: translateX(-50%) rotate(calc(var(--rotation) * 1deg));
+}
+
+.minute-hand {
+  --rotation: 0;
+  background-color: white;
+  width: 10px;
+  height: 185px;
+  position: absolute;
+  bottom: 50%;
+  transform-origin: bottom;
+  transform: translateX(-50%) rotate(calc(var(--rotation) * 1deg));
+}
+
+.second-hand {
+  --rotation: 0;
+  background-color: red;
+  width: 4px;
+  height: 200px;
+  position: absolute;
+  bottom: 50%;
+  transform-origin: bottom;
+  transform: translateX(-50%) rotate(calc(var(--rotation) * 1deg));
+}
+
+.flex{
+  display: flex;
+ 
+  height: 40px;
+ 
+ }
+
+ .f1, .f7 {
+  font-size: 2rem;
+ }
+
+ .f2{
+  display: flex;
+  justify-content: space-between;
+  width: 150px;
+  font-size: 1.5rem;
+ }
+ 
+ .f3{
+  display: flex;
+  justify-content: space-between;
+  width: 250px;
+  font-size: 1.5rem;
+ }
+ 
+ .f4{
+  display: flex;
+  justify-content: space-between;
+  width: 350px;
+  font-size: 2rem;
+ }
+
+ .f5{
+  display: flex;
+  justify-content: space-between;
+  width: 250px;
+  font-size: 1.5rem;
+ }
+
+ .f6{
+  display: flex;
+  justify-content: space-between;
+  width: 150px;
+  font-size: 1.5rem;
+ }
